@@ -1,0 +1,16 @@
+import csv
+csv_path = "/Users/chandinithirumalai/Documents/GitHub/she-codes-exercises-chandinithirumalai/test-project/she-codes-python-weather-project-chandinithirumalai/tests/data/example_one.csv"
+with open(csv_path, encoding="utf-8") as csv_file: 
+
+    reader= csv.reader(csv_file)
+    
+    final_list = []
+    count=0
+    for line in reader:
+        if count==0:
+            count=count+1
+            continue
+        new_line=[line[0], int(line[1]), int(line[2])]
+        final_list.append(new_line)
+
+    print(final_list)
